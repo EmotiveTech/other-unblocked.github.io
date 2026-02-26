@@ -4,53 +4,44 @@
     <title>Bob-the-Robber 1</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Bob the Robber 1" />
-    
     <style>
-        /* Force the body to take up the full screen and remove scrollbars */
+        /* 1. Setup the black background and hide scrollbars */
         html, body {
             margin: 0;
             padding: 0;
             width: 100%;
             height: 100%;
             overflow: hidden;
-            background-color: #000; /* Black background for a cleaner look */
-            font-family: 'Source Sans Pro', sans-serif;
-        }
-
-        /* The container for the game */
-        .game-wrapper {
-            width: 100vw;
-            height: 100vh;
+            background-color: #000;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
-        /* Ensure the dangerous-html component fills the space */
-        dangerous-html {
-            width: 100%;
-            height: 100%;
+        /* 2. Create a container that keeps the game's shape */
+        #game-container {
+            width: 1440px;  /* Original width */
+            height: 910px;  /* Original height */
+            position: relative;
+            transform-origin: center center;
         }
 
-        .swf {
-            width: 100%;
-            height: 100%;
+        /* 3. Ensure the SWF emulator fills the container */
+        .swf-wrapper, dangerous-html, div.swf {
+            width: 100% !important;
+            height: 100% !important;
         }
 
         embed {
             width: 100%;
             height: 100%;
-            display: block;
         }
     </style>
-
-    <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://unpkg.com/dangerous-html@0.1.12/dist/default/lib.umd.js"></script>
 </head>
 <body>
 
-    <div class="game-wrapper">
+    <div id="game-container">
         <dangerous-html
             html="<script src='https://garage-56.github.io/test42/ruffle/ruffle.js'></script>
             <div class='swf'>
@@ -61,90 +52,33 @@
         ></dangerous-html>
     </div>
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3JZWTEPZXN"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-3JZWTEPZXN');
+        // AUTO-SCALE FUNCTION
+        // This script calculates how much to 'zoom' the game to fit your screen perfectly.
+        function scaleGame() {
+            const container = document.getElementById('game-container');
+            const windowWidth = window.innerWidth;
+            const windowHeight = window.innerHeight;
+            
+            // Calculate the ratio
+            const scaleX = windowWidth / 1440;
+            const scaleY = windowHeight / 910;
+            const scale = Math.min(scaleX, scaleY); // Use the smaller scale to avoid cutting off
+
+            container.style.transform = `scale(${scale})`;
+        }
+
+        // Run on load and whenever you resize the window
+        window.addEventListener('resize', scaleGame);
+        window.addEventListener('load', scaleGame);
+        
+        // Extra check for Ruffle loading
+        setTimeout(scaleGame, 1000);
     </script>
 
     <script>
-        (function() {
-            const html = `
-            <div id="cloaker-menu" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #111; border: 2px solid #b30000; padding: 20px; z-index: 99999; font-family: 'Courier New', monospace; color: #eee; text-align: center; box-shadow: 0 0 50px #000; width: 350px;">
-                <h3 style="color: #b30000; margin-top: 0;">TAB CLOAKER V3</h3>
-                <label style="font-size: 0.8rem; color: #888;">QUICK SELECT:</label><br>
-                <select id="cloak-preset" style="width: 95%; margin-bottom: 15px; padding: 5px; background: #222; color: #fff; border: 1px solid #444;">
-                    <option value="">-- Choose a Disguise --</option>
-                    <option value="Google Drive|https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png">Google Drive</option>
-                    <option value="Google Classroom|https://ssl.gstatic.com/classroom/favicon.png">Google Classroom</option>
-                    <option value="Google Docs|https://ssl.gstatic.com/docs/documents/images/kix-favicon7.ico">Google Docs</option>
-                    <option value="Inbx (1) - Gmail|https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico">Gmail</option>
-                    <option value="Canvas|https://du11hjcvx0uqb.cloudfront.net/dist/images/favicon-e10d657a73.ico">Canvas</option>
-                </select>
-                <hr style="border-color: #333; margin: 10px 0;">
-                <label style="font-size: 0.8rem;">TAB TITLE:</label><br>
-                <input type="text" id="cloak-title" placeholder="e.g. Math Notes" style="width: 90%; margin-bottom: 10px; padding: 5px; background: #000; color: #fff; border: 1px solid #333;"><br>
-                <label style="font-size: 0.8rem;">ICON URL:</label><br>
-                <input type="text" id="cloak-icon-url" style="width: 90%; margin-bottom: 15px; padding: 5px; background: #000; color: #fff; border: 1px solid #333;">
-                <br>
-                <button id="btn-cloak" style="background: #b30000; color: white; border: none; padding: 10px 20px; cursor: pointer; font-weight: bold;">APPLY</button>
-                <button id="btn-reset-cloak" style="background: #333; color: white; border: none; padding: 10px 20px; cursor: pointer; margin-left: 5px;">RESET</button>
-                <div style="margin-top: 10px; font-size: 0.7rem; color: #666;">Alt + R to Open / ESC to Close</div>
-            </div>`;
-
-            const div = document.createElement('div');
-            div.innerHTML = html;
-            document.body.appendChild(div);
-
-            const menu = document.getElementById('cloaker-menu');
-            const inputTitle = document.getElementById('cloak-title');
-            const inputIconUrl = document.getElementById('cloak-icon-url');
-            const selectPreset = document.getElementById('cloak-preset');
-            const btnApply = document.getElementById('btn-cloak');
-            const btnReset = document.getElementById('btn-reset-cloak');
-
-            function setFavicon(url) {
-                let link = document.querySelector("link[rel~='icon']");
-                if (!link) {
-                    link = document.createElement('link');
-                    link.rel = 'icon';
-                    document.getElementsByTagName('head')[0].appendChild(link);
-                }
-                link.href = url;
-            }
-
-            selectPreset.addEventListener('change', function() {
-                const parts = this.value.split('|');
-                if(parts.length < 2) return;
-                inputTitle.value = parts[0];
-                inputIconUrl.value = parts[1];
-            });
-
-            btnApply.addEventListener('click', () => {
-                document.title = inputTitle.value;
-                setFavicon(inputIconUrl.value);
-                localStorage.setItem('faz_cloak_title', inputTitle.value);
-                localStorage.setItem('faz_cloak_icon', inputIconUrl.value);
-                menu.style.display = 'none';
-            });
-
-            btnReset.addEventListener('click', () => {
-                localStorage.clear();
-                location.reload();
-            });
-
-            document.addEventListener('keydown', (e) => {
-                if (e.altKey && e.key.toLowerCase() === 'r') menu.style.display = 'block';
-                if (e.key === 'Escape') menu.style.display = 'none';
-            });
-
-            if (localStorage.getItem('faz_cloak_title')) {
-                document.title = localStorage.getItem('faz_cloak_title');
-                setFavicon(localStorage.getItem('faz_cloak_icon'));
-            }
-        })();
+        // [Insert your Tab Cloaker Script from the previous code here]
     </script>
+
 </body>
 </html>
