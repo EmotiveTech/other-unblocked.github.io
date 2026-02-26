@@ -1,423 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <title>Bob-the-Robber 1</title>
-    <meta
-      name="description"
-      content="Bob the Robber 1"
-    />
-    <meta property="og:title" content="Bob-the-Robber" />
-    <meta
-      property="og:description"
-      content="This is WIP, my unblocked game site. Come Play!"
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
-    <meta property="twitter:card" content="summary_large_image" />
-
-    <style data-tag="reset-style-sheet">
-      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
-    </style>
-    <style data-tag="default-style-sheet">
-      html {
-        font-family: Source Sans Pro;
-        font-size: 16px;
-      }
-
-      body {
-        font-weight: 400;
-        font-style:normal;
-        text-decoration: none;
-        text-transform: none;
-        letter-spacing: normal;
-        line-height: 1.15;
-        color: var(--dl-color-gray-black);
-        background-color: var(--dl-color-gray-white);
-
-      }
-    </style>
-    <link
-      rel="shortcut icon"
-      href="public/playground_assets/screenshot_2023-05-13_10.49.15_pm-removebg-preview.png"
-      type="icon/png"
-      sizes="32x32"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&amp;display=swap"
-      data-tag="font"
-    />
-
-    <style data-section-id="dropdown">
-      [data-thq="thq-dropdown"]:hover > [data-thq="thq-dropdown-list"] {
-          display: flex;
-        }
-
-        [data-thq="thq-dropdown"]:hover > div [data-thq="thq-dropdown-arrow"] {
-          transform: rotate(90deg);
-        }
-    </style>
-    <link rel="stylesheet" href="./style.css" />
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <script>
-      ScrollReveal({ reset: true });
-    </script>
-  </head>
-  <body>
-    <div>
-      <script
-        type="text/javascript"
-        src="https://unpkg.com/dangerous-html@0.1.12/dist/default/lib.umd.js"
-      ></script>
-      <link href="./bob-the-robber.css" rel="stylesheet" />
-
-      <div class="bob-the-robber-container">
-        <header data-thq="thq-navbar" class="bob-the-robber-navbar-interactive">
-          <a href="index.html" class="bob-the-robber-navlink">
-            <img
-              alt="logo"
-              src="public/playground_assets/images-removebg-preview2-200h.png"
-              class="bob-the-robber-logo"
-            />
-          </a>
-          <div
-            data-thq="thq-navbar-nav"
-            data-role="Nav"
-            class="bob-the-robber-desktop-menu"
-          >
-            <nav
-              data-thq="thq-navbar-nav-links"
-              data-role="Nav"
-              class="bob-the-robber-nav"
-            >
-              <a href="flash-games.html" class="bob-the-robber-navlink01">
-                <span>Flash</span>
-                <br />
-              </a>
-              <a href="gameboy-games.html" class="bob-the-robber-navlink02">
-                Gameboy
-              </a>
-              <a href="proxies.html" class="bob-the-robber-navlink03">
-                Proxies
-              </a>
-              <a
-                href="interstellar-movies.html"
-                class="bob-the-robber-navlink04"
-              >
-                Movies
-              </a>
-              <a href="guides.html" class="bob-the-robber-navlink05">Guides</a>
-              <a href="credits.html" class="bob-the-robber-navlink06">
-                Credits
-              </a>
-              <a href="guides.html" class="bob-the-robber-navlink07"></a>
-            </nav>
-          </div>
-          <div data-thq="thq-navbar-btn-group" class="bob-the-robber-btn-group">
-            <a
-              href="https://discord.gg/62PsHFFQHm"
-              target="_blank"
-              rel="noreferrer noopener"
-              class="bob-the-robber-link"
-            >
-              <img
-                alt="image"
-                src="public/playground_assets/636e0a6cc3c481a15a141738_icon_clyde_white_rgb-200h.png"
-                class="bob-the-robber-image"
-              />
-            </a>
-          </div>
-          <div data-thq="thq-burger-menu" class="bob-the-robber-burger-menu">
-            <svg viewBox="0 0 1024 1024" class="bob-the-robber-icon">
-              <path
-                d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
-              ></path>
-            </svg>
-          </div>
-          <div data-thq="thq-mobile-menu" class="bob-the-robber-mobile-menu">
-            <div
-              data-thq="thq-mobile-menu-nav"
-              data-role="Nav"
-              class="bob-the-robber-nav1"
-            >
-              <div class="bob-the-robber-container1">
-                <a href="index.html" class="bob-the-robber-navlink08">
-                  <img
-                    alt="image"
-                    src="public/playground_assets/images-removebg-preview2-200h.png"
-                    class="bob-the-robber-image1"
-                  />
-                </a>
-                <div
-                  data-thq="thq-close-menu"
-                  class="bob-the-robber-menu-close"
-                >
-                  <svg viewBox="0 0 1024 1024" class="bob-the-robber-icon2">
-                    <path
-                      d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"
-                    ></path>
-                  </svg>
-                </div>
-              </div>
-              <nav
-                data-thq="thq-mobile-menu-nav-links"
-                data-role="Nav"
-                class="bob-the-robber-nav2"
-              >
-                <a href="flash-games.html" class="bob-the-robber-navlink09">
-                  Flash Games
-                </a>
-                <a href="gameboy-games.html" class="bob-the-robber-navlink10">
-                  Gameboy Games
-                </a>
-                <a href="proxies.html" class="bob-the-robber-navlink11">
-                  Proxies
-                </a>
-                <a href="proxies.html" class="bob-the-robber-navlink12">
-                  Proxies
-                </a>
-                <a href="guides.html" class="bob-the-robber-navlink13">
-                  Guides
-                </a>
-                <a
-                  href="https://discord.gg/62PsHFFQHm"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  class="bob-the-robber-link1"
-                >
-                  WIP Discord
-                </a>
-                <a
-                  href="https://discord.gg/62PsHFFQHm"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  class="bob-the-robber-link2"
-                >
-                  WIP Discord
-                </a>
-                <a
-                  href="https://discord.gg/62PsHFFQHm"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  class="bob-the-robber-link3"
-                >
-                  WIP Discord
-                </a>
-              </nav>
-            </div>
-            <div class="bob-the-robber-icon-group"></div>
-          </div>
-        </header>
-        <div class="bob-the-robber-div">
-          <dangerous-html
-            html="<script src='https://garage-56.github.io/test42/ruffle/ruffle.js'></script>
-<div class='swf'dir='ltr' style='text-align: left;' trbidi='on'>
-        <embed height='910' pluginspage=' http://www.macromedia.com/go/getflashplayer' src='https://garage-56.github.io/Garage-56/bobtherobber.swf' type='application/x-shockwave-flash' width='1440'></embed>
-</div>
-"
-          ></dangerous-html>
-        </div>
-      </div>
-    </div>
-    <script
-      type="text/javascript"
-      src="https://www.googletagmanager.com/gtag/js?id=G-3JZWTEPZXN"
-      async=""
-    ></script>
-    <script type="text/javascript">
-      window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-3JZWTEPZXN');
-    </script>
-    <script type="text/javascript">
-      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-              })(window,document,'script','dataLayer','GTM-KCNV8W8');
-    </script>
-    <script>
-      data-section-id="navbar"
-      src="https://unpkg.com/@teleporthq/teleport-custom-scripts"
-    </script>
-    <script>
-      // --- FAZBEAR TAB RENAMER V3.0 (AUTO-GRABBER) ---
-
-(function() {
-    // 1. SETUP HTML FOR THE MENU
-    const html = `
-    <div id="cloaker-menu" style="
-        display: none; 
-        position: fixed; 
-        top: 50%; 
-        left: 50%; 
-        transform: translate(-50%, -50%); 
-        background: #111; 
-        border: 2px solid #b30000; 
-        padding: 20px; 
-        z-index: 99999; 
-        font-family: 'Courier New', monospace; 
-        color: #eee; 
-        text-align: center;
-        box-shadow: 0 0 50px #000;
-        width: 350px;
-    ">
-        <h3 style="color: #b30000; margin-top: 0;">TAB CLOAKER V3</h3>
-        
-        <label style="font-size: 0.8rem; color: #888;">QUICK SELECT:</label><br>
-        <select id="cloak-preset" style="width: 95%; margin-bottom: 15px; padding: 5px; background: #222; color: #fff; border: 1px solid #444;">
-            <option value="">-- Choose a Disguise --</option>
-            <option value="Google Drive|https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png">Google Drive</option>
-            <option value="Google Classroom|https://ssl.gstatic.com/classroom/favicon.png">Google Classroom</option>
-            <option value="Google Docs|https://ssl.gstatic.com/docs/documents/images/kix-favicon7.ico">Google Docs</option>
-            <option value="My Drive - Google Drive|https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png">My Drive</option>
-            <option value="Inbox (1) - Gmail|https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico">Gmail</option>
-            <option value="Wikipedia|https://en.wikipedia.org/static/favicon/wikipedia.ico">Wikipedia</option>
-            <option value="Canvas|https://du11hjcvx0uqb.cloudfront.net/dist/images/favicon-e10d657a73.ico">Canvas</option>
-            <option value="Schoology|https://ui.schoology.com/design-system/assets/favicon-d123.ico">Schoology</option>
-        </select>
-        
-        <hr style="border-color: #333; margin: 10px 0;">
-
-        <label style="font-size: 0.8rem;">TAB TITLE:</label><br>
-        <input type="text" id="cloak-title" placeholder="e.g. Math Notes" style="width: 90%; margin-bottom: 10px; padding: 5px; background: #000; color: #fff; border: 1px solid #333;"><br>
-        
-        <label style="font-size: 0.8rem;">WEBSITE ICON GRABBER:</label><br>
-        <div style="display: flex; justify-content: center; gap: 5px; margin-bottom: 15px;">
-            <input type="text" id="cloak-domain" placeholder="e.g. roblox.com" style="width: 60%; padding: 5px; background: #000; color: #fff; border: 1px solid #333;">
-            <button id="btn-grab" style="width: 30%; background: #444; color: white; border: none; cursor: pointer; font-size: 0.7rem;">GET ICON</button>
-        </div>
-
-        <input type="hidden" id="cloak-icon-url">
-        
-        <div style="margin-bottom: 15px;">
-            <img id="icon-preview" src="" style="width: 32px; height: 32px; display: none; border: 1px solid #555;">
-        </div>
-        
-        <button id="btn-cloak" style="background: #b30000; color: white; border: none; padding: 10px 20px; cursor: pointer; font-weight: bold;">APPLY</button>
-        <button id="btn-reset-cloak" style="background: #333; color: white; border: none; padding: 10px 20px; cursor: pointer; margin-left: 5px;">RESET</button>
-        
-        <div style="margin-top: 10px; font-size: 0.7rem; color: #666;">Press Alt + R to Open / ESC to Close</div>
-    </div>
-    `;
-
-    // Add to body
-    const div = document.createElement('div');
-    div.innerHTML = html;
-    document.body.appendChild(div);
-
-    // --- VARIABLES ---
-    const menu = document.getElementById('cloaker-menu');
-    const inputTitle = document.getElementById('cloak-title');
-    const inputDomain = document.getElementById('cloak-domain');
-    const inputIconUrl = document.getElementById('cloak-icon-url');
-    const selectPreset = document.getElementById('cloak-preset');
-    const imgPreview = document.getElementById('icon-preview');
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Bob the Robber 1" />
     
-    const btnGrab = document.getElementById('btn-grab');
-    const btnApply = document.getElementById('btn-cloak');
-    const btnReset = document.getElementById('btn-reset-cloak');
-
-    // --- FUNCTIONS ---
-
-    function setFavicon(url) {
-        let link = document.querySelector("link[rel~='icon']");
-        if (!link) {
-            link = document.createElement('link');
-            link.rel = 'icon';
-            document.getElementsByTagName('head')[0].appendChild(link);
-        }
-        link.href = url;
-    }
-
-    function loadSettings() {
-        const savedTitle = localStorage.getItem('faz_cloak_title');
-        const savedIcon = localStorage.getItem('faz_cloak_icon');
-
-        if (savedTitle) {
-            document.title = savedTitle;
-            inputTitle.value = savedTitle;
+    <style>
+        /* Force the body to take up the full screen and remove scrollbars */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #000; /* Black background for a cleaner look */
+            font-family: 'Source Sans Pro', sans-serif;
         }
 
-        if (savedIcon) {
-            setFavicon(savedIcon);
-            inputIconUrl.value = savedIcon;
-            showPreview(savedIcon);
-        }
-    }
-
-    function showPreview(url) {
-        imgPreview.src = url;
-        imgPreview.style.display = 'inline-block';
-    }
-
-    // 1. PRESET HANDLER
-    selectPreset.addEventListener('change', function() {
-        const val = this.value;
-        if(!val) return;
-        
-        const parts = val.split('|'); // Split "Name|URL"
-        inputTitle.value = parts[0];
-        inputIconUrl.value = parts[1];
-        showPreview(parts[1]);
-    });
-
-    // 2. DOMAIN GRABBER HANDLER
-    btnGrab.addEventListener('click', function() {
-        const domain = inputDomain.value.trim();
-        if(!domain) return;
-
-        // Use Google's S2 Service to fetch favicon
-        const iconUrl = `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
-        
-        inputIconUrl.value = iconUrl;
-        showPreview(iconUrl);
-    });
-
-    // 3. APPLY SETTINGS
-    function applyCloak() {
-        const t = inputTitle.value;
-        const i = inputIconUrl.value;
-
-        if (t) {
-            document.title = t;
-            localStorage.setItem('faz_cloak_title', t);
-        }
-        
-        if (i) {
-            setFavicon(i);
-            localStorage.setItem('faz_cloak_icon', i);
+        /* The container for the game */
+        .game-wrapper {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        menu.style.display = 'none';
-    }
-
-    // 4. RESET
-    function resetCloak() {
-        localStorage.removeItem('faz_cloak_title');
-        localStorage.removeItem('faz_cloak_icon');
-        location.reload(); 
-    }
-
-    // --- KEY LISTENERS ---
-    document.addEventListener('keydown', function(e) {
-        if (e.altKey && e.key.toLowerCase() === 'r') {
-            e.preventDefault();
-            menu.style.display = 'block';
+        /* Ensure the dangerous-html component fills the space */
+        dangerous-html {
+            width: 100%;
+            height: 100%;
         }
-        if (e.key === 'Escape') {
-            menu.style.display = 'none';
+
+        .swf {
+            width: 100%;
+            height: 100%;
         }
-    });
 
-    btnApply.addEventListener('click', applyCloak);
-    btnReset.addEventListener('click', resetCloak);
+        embed {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+    </style>
 
-    // Load on start
-    loadSettings();
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://unpkg.com/dangerous-html@0.1.12/dist/default/lib.umd.js"></script>
+</head>
+<body>
 
-})();
+    <div class="game-wrapper">
+        <dangerous-html
+            html="<script src='https://garage-56.github.io/test42/ruffle/ruffle.js'></script>
+            <div class='swf'>
+                <embed src='https://garage-56.github.io/Garage-56/bobtherobber.swf' 
+                       type='application/x-shockwave-flash'>
+                </embed>
+            </div>"
+        ></dangerous-html>
+    </div>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3JZWTEPZXN"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-3JZWTEPZXN');
     </script>
-  </body>
+
+    <script>
+        (function() {
+            const html = `
+            <div id="cloaker-menu" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #111; border: 2px solid #b30000; padding: 20px; z-index: 99999; font-family: 'Courier New', monospace; color: #eee; text-align: center; box-shadow: 0 0 50px #000; width: 350px;">
+                <h3 style="color: #b30000; margin-top: 0;">TAB CLOAKER V3</h3>
+                <label style="font-size: 0.8rem; color: #888;">QUICK SELECT:</label><br>
+                <select id="cloak-preset" style="width: 95%; margin-bottom: 15px; padding: 5px; background: #222; color: #fff; border: 1px solid #444;">
+                    <option value="">-- Choose a Disguise --</option>
+                    <option value="Google Drive|https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png">Google Drive</option>
+                    <option value="Google Classroom|https://ssl.gstatic.com/classroom/favicon.png">Google Classroom</option>
+                    <option value="Google Docs|https://ssl.gstatic.com/docs/documents/images/kix-favicon7.ico">Google Docs</option>
+                    <option value="Inbx (1) - Gmail|https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico">Gmail</option>
+                    <option value="Canvas|https://du11hjcvx0uqb.cloudfront.net/dist/images/favicon-e10d657a73.ico">Canvas</option>
+                </select>
+                <hr style="border-color: #333; margin: 10px 0;">
+                <label style="font-size: 0.8rem;">TAB TITLE:</label><br>
+                <input type="text" id="cloak-title" placeholder="e.g. Math Notes" style="width: 90%; margin-bottom: 10px; padding: 5px; background: #000; color: #fff; border: 1px solid #333;"><br>
+                <label style="font-size: 0.8rem;">ICON URL:</label><br>
+                <input type="text" id="cloak-icon-url" style="width: 90%; margin-bottom: 15px; padding: 5px; background: #000; color: #fff; border: 1px solid #333;">
+                <br>
+                <button id="btn-cloak" style="background: #b30000; color: white; border: none; padding: 10px 20px; cursor: pointer; font-weight: bold;">APPLY</button>
+                <button id="btn-reset-cloak" style="background: #333; color: white; border: none; padding: 10px 20px; cursor: pointer; margin-left: 5px;">RESET</button>
+                <div style="margin-top: 10px; font-size: 0.7rem; color: #666;">Alt + R to Open / ESC to Close</div>
+            </div>`;
+
+            const div = document.createElement('div');
+            div.innerHTML = html;
+            document.body.appendChild(div);
+
+            const menu = document.getElementById('cloaker-menu');
+            const inputTitle = document.getElementById('cloak-title');
+            const inputIconUrl = document.getElementById('cloak-icon-url');
+            const selectPreset = document.getElementById('cloak-preset');
+            const btnApply = document.getElementById('btn-cloak');
+            const btnReset = document.getElementById('btn-reset-cloak');
+
+            function setFavicon(url) {
+                let link = document.querySelector("link[rel~='icon']");
+                if (!link) {
+                    link = document.createElement('link');
+                    link.rel = 'icon';
+                    document.getElementsByTagName('head')[0].appendChild(link);
+                }
+                link.href = url;
+            }
+
+            selectPreset.addEventListener('change', function() {
+                const parts = this.value.split('|');
+                if(parts.length < 2) return;
+                inputTitle.value = parts[0];
+                inputIconUrl.value = parts[1];
+            });
+
+            btnApply.addEventListener('click', () => {
+                document.title = inputTitle.value;
+                setFavicon(inputIconUrl.value);
+                localStorage.setItem('faz_cloak_title', inputTitle.value);
+                localStorage.setItem('faz_cloak_icon', inputIconUrl.value);
+                menu.style.display = 'none';
+            });
+
+            btnReset.addEventListener('click', () => {
+                localStorage.clear();
+                location.reload();
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.altKey && e.key.toLowerCase() === 'r') menu.style.display = 'block';
+                if (e.key === 'Escape') menu.style.display = 'none';
+            });
+
+            if (localStorage.getItem('faz_cloak_title')) {
+                document.title = localStorage.getItem('faz_cloak_title');
+                setFavicon(localStorage.getItem('faz_cloak_icon'));
+            }
+        })();
+    </script>
+</body>
 </html>
